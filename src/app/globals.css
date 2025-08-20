@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+@theme {
+  --font-instrument-serif: "Instrument Serif", serif;
+  --font-noto-serif: "Noto Serif", serif;
+  --font-cutive-mono: "Cutive Mono", monospace;
+  --font-bodoni-moda: "Bodoni Moda", serif;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  color: black;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  background-image: url("/noise.svg");
+  mix-blend-mode: overlay;
+}
+
+.text {
+  font-size: 18px;
+  font-family: var(--font-noto-serif);
+  line-height: 150%;
+  max-width: 700px;
+}
+
+@media (max-width: 1024px) {
+  .text {
+    max-width: 80vw !important;
+  }
+}
+
+.text span,
+.slide-up span {
+  margin-right: 4px;
+}
+
+.text .mask,
+.slide-up .mask {
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+}
